@@ -181,11 +181,3 @@ RegisterNUICallback('giveItemToPlayer', function(data, cb)
     cb({ ok = true })
 end)
 
-CreateThread(function()
-    while true do
-        Wait(0)
-        if IsControlJustReleased(0, 200) and nuiOpen then 
-            ToggleNuiFrame(false)
-        end
-    end
-end)
