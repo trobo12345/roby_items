@@ -81,7 +81,7 @@ Roby.ToggleNuiFrame = function(state)
         translations = state and Roby.PrepareTranslations() or nil
     }
     if state and #currentItems > 0 then
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] Sending %d items to NUI on open.", resourceName, #currentItems))
         end
         message.items = currentItems 
@@ -97,7 +97,7 @@ RegisterNetEvent(resourceName .. ':receiveItems_c', function(itemsFromServer)
     end
     currentItems = itemsFromServer
     if nuiOpen then 
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] NUI is open, sending updated items list (%d items).", resourceName, #currentItems))
         end
         SendNUIMessage({
@@ -163,7 +163,7 @@ RegisterNUICallback('giveItemToPlayer', function(data, cb)
                 action = 'showNotification', 
                 message = notificationMsg
             })
-            if Config.Debug then
+            if Roby.Debug then
                 print(string.format("[%s] [DEBUG] Invalid target player ID: %s", resourceName, data.targetPlayerId))
             end
         end
@@ -174,7 +174,7 @@ RegisterNUICallback('giveItemToPlayer', function(data, cb)
             action = 'showNotification', 
             message = notificationMsg
         })
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] Missing itemId or targetPlayerId in 'giveItemToPlayer' callback.", resourceName))
         end
     end
