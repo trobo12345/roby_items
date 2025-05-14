@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Lista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="ui-container">
+        <div class="container">
+            <div class="header">
+                <h1 id="title">Roby Scripts</h1>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Keresés...">
+                </div>
+                <button id="close-button">X</button>
+            </div>
+            <div id="item-list">
+            </div>
+            <div id="paginationControls">
+                <button id="prevPage" disabled>Előző</button>
+                <span id="pageInfo">Oldal 1/1</span>
+                <button id="nextPage" disabled>Következő</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="give-item-modal">
+        <div class="modal-content">
+            <h2>Item Átadása Játékosnak</h2>
+            <div class="input-group">
+                <label for="player-id-input">Játékos ID:</label>
+                <input type="text" id="player-id-input" placeholder="Add meg a játékos ID-t">
+            </div>
+            <div class="modal-buttons">
+                <button id="cancel-give-button">Mégse</button>
+                <button id="confirm-give-button">Átadás</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

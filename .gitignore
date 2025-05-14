@@ -1,0 +1,11 @@
+# Általános fájlok kizárása
+.idea/
+.vscode/
+*.log
+
+# OS specifikus fájlok
+.DS_Store
+Thumbs.db
+
+# FiveM specifikus fájlok, ha esetleg vannak
+cache/
