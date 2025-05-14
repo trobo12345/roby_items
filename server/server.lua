@@ -117,13 +117,13 @@ RegisterNetEvent(resourceName .. ':getItems_s', function()
     local src = source
     
     if not Roby.HasPermission(src) then
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] Player %s attempted to get items without permission", resourceName, src))
         end
         return
     end
     
-    if Config.Debug then
+    if Roby.Debug then
         print(string.format("[%s] [DEBUG] Event '%s:getItems_s' triggered by player %s. Fetching items from ox_inventory.", resourceName, resourceName, src))
     end
     
@@ -134,11 +134,11 @@ RegisterNetEvent(resourceName .. ':getItems_s', function()
         for itemName, itemData in pairs(items) do
             table.insert(itemList, { id = itemName, name = itemData.label or itemName })
         end
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] Fetched %d items from ox_inventory. Sending to player %s.", resourceName, #itemList, src))
         end
     else
-        if Config.Debug then
+        if Roby.Debug then
             print(string.format("[%s] [DEBUG] Failed to fetch items or no items found in ox_inventory. 'items' type: %s", resourceName, type(items)))
         end
     end
@@ -146,7 +146,7 @@ RegisterNetEvent(resourceName .. ':getItems_s', function()
     TriggerClientEvent(resourceName .. ':receiveItems_c', src, itemList)
 end)
 
-if Config.Debug then
+if Roby.Debug then
     print(string.format("[%s] [DEBUG] Server-side script fully loaded and configured to use ox_inventory. Debug is ON.", resourceName))
 else
     print(string.format("[%s] Server-side script loaded. Debug is OFF.", resourceName))
