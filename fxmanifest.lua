@@ -4,12 +4,11 @@ lua54 'yes'
 
 author 'Roby'
 description 'Roby Items - Item list with UI'
-version '1.0.4'
+version '2.0.0'
 
 shared_scripts {
     'shared/*.lua',
     '@es_extended/imports.lua'
-
 }
 
 ui_page 'html/index.html'
